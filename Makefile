@@ -21,8 +21,8 @@ SOURCES = \
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 
 LLVM_COMPONENTS = all
-LLVM_CXXFLAGS = $(shell llvm-config --cxxflags)
-LLVM_LDFLAGS = $(shell llvm-config --ldflags)
+LLVM_CXXFLAGS = $(shell llvm-config-3.8 --cxxflags)
+LLVM_LDFLAGS = $(shell llvm-config-3.8 --ldflags)
 
 CXXFLAGS = -std=c++11 -fPIC -Wall -fno-strict-aliasing
 CXXFLAGS += -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
