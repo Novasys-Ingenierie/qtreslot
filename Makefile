@@ -24,7 +24,7 @@ LLVM_COMPONENTS = all
 LLVM_CXXFLAGS = $(shell llvm-config --cxxflags)
 LLVM_LDFLAGS = $(shell llvm-config --ldflags)
 
-CXXFLAGS = -std=c++11 -fPIC -Wall
+CXXFLAGS = -std=c++11 -fPIC -Wall -fno-strict-aliasing
 CXXFLAGS += -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
 CXXFLAGS += $(LLVM_CXXFLAGS)
 
