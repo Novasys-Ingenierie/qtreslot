@@ -83,8 +83,8 @@ Context::processBuffer(const FileID &id, const RewriteBuffer &buffer)
     // TODO Avoid writing if output already exists and is up to date.
 
     const FileEntry *entry = getSourceMgr().getFileEntryForID(id);
-    string path((_ci.getFileManager().getCanonicalName(entry->getDir()).str()
-                + "/" + entry->getName() + ".qtreslot"));
+    string path(entry->getName());
+    path.append(".qtreslot");
     note(string("writing ") + path);
     raw_fd_ostream file(StringRef(path), error, llvm::sys::fs::F_None);
 
